@@ -895,7 +895,7 @@ class _DateTimePickerState extends FormFieldState<String> {
       }
 
       final lsOldValue = _sValue;
-      _sValue = '$_sDate $_sTime' + _sPeriod;
+      _sValue = '$_sDate $_sTime';
       _sValue = _sValue.trim();
 
       if (widget.dateMask != null && widget.dateMask != '') {
@@ -911,7 +911,7 @@ class _DateTimePickerState extends FormFieldState<String> {
       _effectiveController?.text = _sValue;
 
       if (_sValue != lsOldValue) {
-        onChangedHandler(_sValue);
+        onChangedHandler(_sValue + _sPeriod);
       }
     }
   }
