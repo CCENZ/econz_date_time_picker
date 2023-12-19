@@ -908,7 +908,7 @@ class _DateTimePickerState extends FormFieldState<String> {
       }
 
       _dateLabelController.text = lsFormatedDate + _sPeriod;
-      _effectiveController?.text = _sValue + _sPeriod;
+      _effectiveController?.text = _sValue;
 
       if (_sValue != lsOldValue) {
         onChangedHandler(_sValue + _sPeriod);
