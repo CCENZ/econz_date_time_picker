@@ -801,7 +801,7 @@ class _DateTimePickerState extends FormFieldState<String> {
 
       _tTime = ltTimePicked;
 
-      _timeLabelController.text = _sTime;
+      _timeLabelController.text = _sTime + _sPeriod;
       final lsOldValue = _sValue;
       _sValue = _sTime;
 
@@ -813,7 +813,7 @@ class _DateTimePickerState extends FormFieldState<String> {
       _effectiveController?.text = _sValue;
 
       if (_sValue != lsOldValue) {
-        onChangedHandler(_sValue);
+        onChangedHandler(_sValue + _sPeriod);
       }
     }
   }
