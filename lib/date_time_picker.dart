@@ -524,6 +524,8 @@ class _DateTimePickerState extends FormFieldState<String> {
   String _sTime = '';
   String _sPeriod = '';
 
+  NumberFormat numFormatter = new NumberFormat("00");
+
   @override
   DateTimePicker get widget => super.widget as DateTimePicker;
 
@@ -589,6 +591,10 @@ class _DateTimePickerState extends FormFieldState<String> {
 
         if (!widget.use24HourFormat) {
           _sPeriod = _tTime.period.index == 0 ? ' AM' : ' PM';
+          if(_tTime.period.index == 1){
+            int tHour = int.parse(llTime[0]) - 12;
+            _sTime = numFormatter.format(tHour) ":" + llTime[1];
+          }          
         }
 
         _timeLabelController.text = _sTime + _sPeriod;
