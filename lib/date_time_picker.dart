@@ -593,7 +593,7 @@ class _DateTimePickerState extends FormFieldState<String> {
           _sPeriod = _tTime.period.index == 0 ? ' AM' : ' PM';
           if(_tTime.period.index == 1){
             int tHour = int.parse(llTime[0]) - 12;
-            _sTime = numFormatter.format(tHour) ":" + llTime[1];
+            _sTime = numFormatter.format(tHour) + ":" + llTime[1];
           }          
         }
 
